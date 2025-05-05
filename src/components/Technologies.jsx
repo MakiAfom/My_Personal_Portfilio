@@ -1,13 +1,10 @@
 import { RiReactjsLine } from "react-icons/ri";
 import { TbBrandNextjs } from "react-icons/tb";
-import { SiMongodb } from "react-icons/si";
-import { FaNodeJs } from "react-icons/fa6";
+import { SiMongodb, SiTensorflow } from "react-icons/si";
+import { FaNodeJs, FaChartBar } from "react-icons/fa";
 import { BiLogoPostgresql } from "react-icons/bi";
 import { motion } from "framer-motion";
-import { FaPython } from "react-icons/fa";
-import { SiPowerbi } from "react-icons/si";
-import { FaFileExcel } from "react-icons/fa";
-import { SiTensorflow } from "react-icons/si";
+import { FaPython, FaFileExcel } from "react-icons/fa";
 
 const iconVariants = (duration) => ({
   initial: { y: -10 },
@@ -105,7 +102,7 @@ const Technologies = () => {
           animate="animate"
           className="rounded-2xl border-4 border-neutral-800 p-4"
         >
-          <SiPowerbi className="text-7xl text-yellow-600" />
+          <FaChartBar className="text-7xl text-yellow-600" />
         </motion.div>
 
         <motion.div

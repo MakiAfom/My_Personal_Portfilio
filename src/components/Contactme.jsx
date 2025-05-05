@@ -3,17 +3,8 @@ import { CONTACT } from "../constants/index";
 import { motion } from "framer-motion";
 
 const Contactme = () => {
-  console.log(CONTACT);
   return (
     <div className="border-b border-neutral-900 pb-20 bg-black-100">
-      <motion.h1
-        whileInView={{ opacity: 1, y: 0 }}
-        initial={{ opacity: 0, y: -100 }}
-        transition={{ duration: 0.5 }}
-        className="my-10 text-center text-4xl text-purple-900 font-bold"
-      >
-        Get In Touch
-      </motion.h1>
       <div className="flex flex-col sm:flex-row justify-between items-center text-center sm:text-left px-4">
         {/* Left side */}
         <div

@@ -1,5 +1,6 @@
-import mikalsprofile from "../assets/mikalsprofile.jpg";
 import { motion } from "framer-motion";
+import mikalsprofile from "../assets/mikalsprofile.jpg";
+import { FaQuoteLeft } from "react-icons/fa";
 
 const container = (delay) => ({
   hidden: { x: -100, opacity: 0 },
@@ -12,53 +13,47 @@ const container = (delay) => ({
 
 const Bio = () => {
   return (
-    <div className="border-b border-neutral-900 pb-4 lg:mb-35">
-      <div className="flex flex-wrap">
-        <div className="w-full lg:w-1/2">
-          <div className="flex flex-col items-center lg:items-start">
-            <motion.h1
-              variants={container(0)}
-              initial="hidden"
-              animate="visible"
-              className="pb-16 text-6xl font-thin tracking-tight lg:mt-16 lg:text-8xl"
-            >
-              Mikal Afewerki
-            </motion.h1>
-            <motion.span
-              variants={container(0.5)}
-              initial="hidden"
-              animate="visible"
-              className="bg-gradient-to-r from-pink-300 via-slate-500 to-purple-500 bg-clip-text text-transparent text-3xl tracking-tight"
-            >
-              Data Analyst
-            </motion.span>
-            <motion.p
-              variants={container(1)}
-              initial="hidden"
-              animate="visible"
-              className="my-2 max-w-xl py-6 font-light tracking-tight text-white"
-            >
-              I’m Mikal, a data analyst and aspiring entrepreneur with a strong
-              background in mechanical engineering. I enjoy working on
-              data-driven projects that solve real-world problems and drive
-              innovation. I’m currently seeking opportunities as a data analyst
-              and am open to collaboration, mentorship, or feedback on my work.
-              What I’m Looking For:
-            </motion.p>
-          </div>
-        </div>
-        <div className="w-full lg:w-1/2 lg:p-4">
-          <div className="flex justify-center">
+    <div className="border-b border-neutral-900 pb-12 flex flex-col items-center justify-center min-h-[70vh] bg-gradient-to-br from-gray-900 via-gray-800 to-purple-900 relative overflow-hidden">
+      {/* Decorative blurred gradient shapes */}
+      <div className="absolute top-0 left-0 w-72 h-72 bg-purple-500 opacity-30 rounded-full blur-3xl -z-10 animate-pulse"></div>
+      <div className="absolute bottom-0 right-0 w-72 h-72 bg-pink-400 opacity-20 rounded-full blur-3xl -z-10 animate-pulse"></div>
+      
+      {/* Glassmorphism Card */}
+      <div className="backdrop-blur-lg bg-white/10 rounded-3xl shadow-2xl p-10 flex flex-col items-center max-w-xl w-full border border-white/20">
+        {/* Profile Image with gradient border */}
+        <div className="mb-8">
+          <div className="bg-gradient-to-tr from-pink-400 via-purple-500 to-blue-400 p-1 rounded-full">
             <motion.img
-              initial={{ x: 100, opacity: 0 }}
-              animate={{ x: 0, opacity: 1 }}
-              transition={{ duration: 1, delay: 1.2 }}
-              className="w-80 h-80 object-cover"
+              initial={{ scale: 0.8, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              transition={{ duration: 1, delay: 0.3 }}
+              className="w-72 h-72 object-cover rounded-full border-4 border-white shadow-xl"
               src={mikalsprofile}
               alt="Mikal Afewerki"
             />
           </div>
         </div>
+        {/* Name only */}
+        <motion.h1
+          variants={container(0)}
+          initial="hidden"
+          animate="visible"
+          className="text-5xl md:text-6xl font-extrabold bg-gradient-to-r from-pink-300 via-slate-500 to-purple-500 bg-clip-text text-transparent text-center"
+        >
+          Mikal Afewerki
+        </motion.h1>
+        {/* Motto */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1, delay: 0.8 }}
+          className="mt-8 flex flex-col items-center"
+        >
+          <FaQuoteLeft className="text-3xl text-purple-400 mb-2 animate-bounce" />
+          <span className="italic text-xl md:text-2xl text-center bg-gradient-to-r from-pink-400 via-purple-400 to-blue-400 bg-clip-text text-transparent font-semibold drop-shadow-lg">
+            "If I were given 1 hour to save the planet, I would spend 59 minutes defining the problem and 1 minute resolving it."
+          </span>
+        </motion.div>
       </div>
     </div>
   );

@@ -1,26 +1,29 @@
+import React from "react";
 import Navbar from "./components/Navbar";
 import Bio from "./components/Bio";
 import About from "./components/About";
 import Technologies from "./components/Technologies";
-import Experiences from "./components/Experiences";
-import Projects from "./components/Projects";
-import Contactme from "./components/Contactme";
+import ProjectsList from "./components/ProjectsList";
+import Footer from "./components/Footer";
 
 const App = () => {
   return (
-    <div className="overflow-x-hidden text-neutral-300 antialiased selection:bg-cyan-300  selection:text-cyan-900">
-      <div className="fixed top-0 -z-10 h-full w-full">
-        <div className="absolute top-0 z-[-2] h-screen w-screen bg-neutral-950 bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(120,119,198,0.3),rgba(255,255,255,0))]"></div>
-      </div>
-      <div className="container mx-auto px-8">
-        <Navbar />
-        <Bio />
-        <About />
-        <Technologies />
-        <Experiences />
-        <Projects />
-        <Contactme />
-      </div>
+    <div className="min-h-screen bg-gray-900 text-white">
+      <Navbar />
+      <main className="pt-20">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <Bio />
+          <About />
+          <section className="py-16">
+            <h2 className="text-4xl font-bold mb-6 text-center bg-gradient-to-r from-blue-500 to-purple-500 bg-clip-text text-transparent">
+              Data Science & Analytics Portfolio
+            </h2>
+            <ProjectsList />
+          </section>
+          <Technologies />
+        </div>
+      </main>
+      <Footer />
     </div>
   );
 };

@@ -1,108 +1,68 @@
-import aboutme from "../assets/computer-program-coding-screen.png";
 import { motion } from "framer-motion";
-import ProjectsList from "./ProjectsList";
+import aboutBg from "../assets/about-bg.jpg";
 
 const About = () => {
   return (
-    <div className="border-b border-neutral-900 pb-4">
-      <h1 className="my-20 text-center text-4xl">
-        About <span className="text-neutral-500">Me</span>
-      </h1>
-      <div className="flex justify-center">
-        <div className="max-w-2xl text-center">
-          <p className="mb-4">
-            My passion is to solve complex problems and optimize processes where
-            data is the solution. I enjoy working on projects that involve
-            playing with programming languages to optimize systems and find
-            innovative solutions. Below are some highlights of the selected
-            projects in my portfolio, but I’ve completed many more, which you
-            can find on my GitHub.
+    <section
+      className="relative border-b border-neutral-900 pb-16 min-h-[80vh] flex items-center justify-center overflow-hidden"
+      style={{
+        backgroundImage: `linear-gradient(rgba(20,20,40,0.7), rgba(40,20,60,0.6)), url(${aboutBg})`,
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+        backgroundRepeat: "no-repeat",
+        backgroundAttachment: "fixed",
+      }}
+    >
+      {/* Animated, blurred colored shapes */}
+      <motion.div
+        className="absolute top-10 left-10 w-32 h-32 rounded-full bg-purple-400 opacity-20 blur-2xl z-0"
+        animate={{ y: [0, 30, 0], x: [0, 20, 0] }}
+        transition={{ duration: 8, repeat: Infinity, repeatType: "reverse" }}
+      />
+      <motion.div
+        className="absolute bottom-20 right-20 w-40 h-40 rounded-full bg-green-400 opacity-20 blur-2xl z-0"
+        animate={{ y: [0, -30, 0], x: [0, -20, 0] }}
+        transition={{ duration: 10, repeat: Infinity, repeatType: "reverse" }}
+      />
+
+      {/* Glassmorphism Card */}
+      <motion.div
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 1 }}
+        className="relative z-10 max-w-2xl w-full mx-auto bg-white/10 backdrop-blur-md rounded-3xl shadow-2xl p-10 border border-white/20"
+      >
+        <h1 className="mb-10 text-center text-4xl font-extrabold bg-gradient-to-r from-green-400 via-blue-400 to-purple-400 bg-clip-text text-transparent drop-shadow-lg">
+          About <span className="text-neutral-300">Me</span>
+        </h1>
+        <div className="text-center">
+          <p className="mb-6 text-lg leading-relaxed text-white/90">
+            As a Mechanical Engineer and Data Analyst, I am driven by problem-solving. With expertise in Python and data visualization tools like Tableau and Matplotlib, I thrive on unraveling complex challenges and turning data into actionable insights.
+            <br /><br />
+            Throughout my career, I've worked across diverse projects—from optimizing operational efficiency by 40% in engineering roles to driving process improvements as a Data Analyst. My passion lies in identifying the root cause of issues and translating those findings into clear visualizations that help stakeholders make informed decisions.
+            <br /><br />
+            My goal is to contribute to a tech or engineering company where I can leverage my data analytics and problem-solving skills to tackle real-world challenges. I am always excited by the opportunity to collaborate with cross-functional teams and create data-driven strategies that shape the future.
           </p>
-          <p className="mb-4">
-            These are the key projects I’ve chosen to showcase in my portfolio,
-            demonstrating my ability to analyze data, build models, and create
-            solutions. For a deeper look into my work, feel free to explore my
-            other projects on{" "}
+          <div className="mb-8">
+            <span className="inline-block px-6 py-2 rounded-full bg-gradient-to-r from-green-500 via-blue-500 to-purple-500 text-white font-semibold text-lg shadow-lg">
+              Data Analysis & Visualization • Machine Learning & AI • Full-Stack Development • Business Intelligence
+            </span>
+          </div>
+          <p className="mb-4 text-lg leading-relaxed text-white/80">
+            Explore my portfolio below to see some of my key projects. For more detailed work, visit my{" "}
             <a
               href="https://github.com/MakiAfom"
               target="_blank"
-              className="text-blue-500 underline"
+              rel="noopener noreferrer"
+              className="text-green-300 hover:text-blue-400 transition-colors duration-300 underline"
             >
               GitHub
             </a>
             .
           </p>
         </div>
-      </div>
-      <div className="flex flex-wrap">
-        {/* <motion.div
-          whileInView={{ opacity: 1, x: 0 }}
-          initial={{ opacity: 0, x: -100 }}
-          transition={{ duration: 0.5 }}
-          className="w-full lg:w-1/2 lg:p-8"
-        >
-          <div className="flex items-center justify-center">
-            <img className="rounded-2xl" src={aboutme} alt="about" />
-          </div>
-        </motion.div> */}
-        {/* <motion.div
-          whileInView={{ opacity: 1, x: 0 }}
-          initial={{ opacity: 0, x: 100 }}
-          transition={{ duration: 0.5 }}
-          className="w-full lg:w-1/2"
-        >
-          <div className="flex justify-center lg:justify-start">
-            <div className="my-2 max-w-xl py-6">
-              <h2 className="text-2xl font-bold mb-4 text-purple-600">
-                Table of Contents
-              </h2>
-              <ul className="list-disc ml-4">
-                <li className="my-2">
-                  <strong className="text-red-500">Project 1:</strong>{" "}
-                  Optimizing Solar Cooking Efficiency
-                  <p className="ml-4">
-                    A project focused on improving solar cooking systems for
-                    sustainability, analyzing energy use for optimal
-                    performance.
-                  </p>
-                </li>
-                <li className="my-2">
-                  <strong className="text-yellow-500">Project 2:</strong>{" "}
-                  Data-Driven Restaurant Recommendation System
-                  <p className="ml-4">
-                    This project aims to enhance customer experience by using
-                    restaurant reviews and location data from a Kaggle dataset.
-                    The primary objective is to analyze restaurant ratings based
-                    on various features and create a personalized restaurant
-                    recommendation system.
-                  </p>
-                </li>
-                <li className="my-2">
-                  <strong className="text-blue-500">Project 3:</strong> Customer
-                  Empowering Employee Learning through Power BI in Rural Eritrea
-                  <p className="ml-4">
-                    A development initiative sought to enhance workforce
-                    efficiency and gather demographic insights to shape training
-                    programs in rural Eritrea of employee data to uncover
-                    gender-based patterns in investments and educational needs..
-                  </p>
-                </li>
-                <li className="my-2">
-                  <strong className="text-green-500">Project 4:</strong> SDS and
-                  Walmart Sales Prediction
-                  <p className="ml-4">
-                    Forecast Walmart's sales to optimize inventory, improve
-                    marketing strategies, and manage seasonal demand more
-                    effectively.
-                  </p>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </motion.div> */}
-        <ProjectsList />
-      </div>
-    </div>
+      </motion.div>
+    </section>
   );
 };
 

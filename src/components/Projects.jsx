@@ -29,23 +29,6 @@ const Projects = () => {
               onMouseEnter={() => setHoveredProject(index)}
               onMouseLeave={() => setHoveredProject(null)}
             >
-              {/* Project Image */}
-              <a
-                href={project.githubUrl} // Direct each project to its specific URL
-                target="_blank"
-                rel="noopener noreferrer"
-                className="block mb-4"
-              >
-                <img
-                  src={project.image}
-                  width={300}
-                  height={300}
-                  alt={project.title}
-                  className="rounded hover:shadow-lg cursor-pointer"
-                  title={`Click to view details of ${project.title}`}
-                />
-              </a>
-
               {/* Project Details (conditionally rendered on hover) */}
               {hoveredProject === index && (
                 <motion.div
