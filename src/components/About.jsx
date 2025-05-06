@@ -57,14 +57,6 @@ const About = () => {
         >
           Mikal Afewerki
         </motion.h1>
-        <motion.h2
-          initial={{ opacity: 0, y: -20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.4 }}
-          className="mb-10 text-center text-2xl font-bold text-neutral-300"
-        >
-          Data Alchemist
-        </motion.h2>
         <div className="text-center">
           <motion.p 
             initial={{ opacity: 0 }}
