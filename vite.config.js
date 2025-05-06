@@ -10,5 +10,10 @@ export default defineConfig({
     strictPort: false,
     host: true,
     open: true
+  },
+  build: {
+    outDir: 'dist',
+    sourcemap: true,
+    target: 'es2015'
   }
 });
