@@ -1,11 +1,32 @@
 import { motion } from "framer-motion";
 import mikalsprofile from "../assets/mikalsprofile.jpg";
 import mynewbg from "../assets/mynewbg.jpg";
+import bkground from "../assets/bkground.jpg";
 
 const Bio = () => {
   return (
     <section className="relative flex flex-col items-center justify-center min-h-screen w-full overflow-hidden z-10 bg-gradient-to-br from-purple-900 via-blue-900 to-pink-800">
-      {/* Centered, vivid, rotating background image */}
+      {/* First rotating background */}
+      <motion.img
+        src={bkground}
+        alt="First rotating background"
+        className="absolute left-0 top-0 w-full h-full object-contain opacity-30 z-0 pointer-events-none select-none"
+        animate={{ rotate: [0, 360] }}
+        transition={{ repeat: Infinity, duration: 240, ease: "linear" }}
+        style={{ transformOrigin: 'top left' }}
+      />
+      
+      {/* Second rotating background */}
+      <motion.img
+        src={bkground}
+        alt="Second rotating background"
+        className="absolute right-0 top-0 w-full h-full object-contain opacity-20 z-0 pointer-events-none select-none"
+        animate={{ rotate: [0, -360] }}
+        transition={{ repeat: Infinity, duration: 240, ease: "linear" }}
+        style={{ transformOrigin: 'top right' }}
+      />
+
+      {/* Your existing rotating background */}
       <motion.img
         src={mynewbg}
         alt="Rotating background"
