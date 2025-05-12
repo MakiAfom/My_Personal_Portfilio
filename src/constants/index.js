@@ -164,7 +164,7 @@ export const PROJECTS = [
 ];
 
 export const CONTACT = {
-  address: "North Carolina, CH 28212 ",
-  phoneNo: "+9804579962 ",
+  address: "Charlotte,North Carolina ",
+  
   email: "mikalafewerki14@gmail.com",
 };

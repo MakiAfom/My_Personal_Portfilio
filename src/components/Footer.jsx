@@ -16,11 +16,11 @@ const Footer = () => {
               </div>
               <div className="flex items-center space-x-3 text-gray-400">
                 <FaPhone className="text-blue-500" />
-                <span>+9804579962</span>
+                <span></span>
               </div>
               <div className="flex items-center space-x-3 text-gray-400">
                 <FaLocationDot className="text-blue-500" />
-                <span>North Carolina, CH 28212</span>
+                <span>Charlotte,North Carolina, </span>
               </div>
             </div>
           </div>
